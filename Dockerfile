@@ -1,8 +1,4 @@
 FROM quay.io/fenicsproject/stable:latest
-
-
-
-
 ENV HDF5_MPI="ON" \
     CC=mpicc \
     HDF5_DIR="/usr/lib/x86_64-linux-gnu/hdf5/mpich/"
@@ -29,7 +25,6 @@ RUN pip3 install --no-cache --upgrade pip && \
     pip3 install --no-cache pyvista && \
     pip3 install --no-cache pyvirtualdisplay
 RUN jupyter labextension install jupyter-matplotlib jupyterlab-datawidgets itkwidgets
-
 
 # create user with a home directory
 ARG NB_USER
