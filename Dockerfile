@@ -1,4 +1,8 @@
 FROM quay.io/fenicsproject/stable:latest
+
+
+
+
 ENV HDF5_MPI="ON" \
     CC=mpicc \
     HDF5_DIR="/usr/lib/x86_64-linux-gnu/hdf5/mpich/"
@@ -39,7 +43,6 @@ ENV PYVISTA_PLOT_THEME document
 ENV PYVISTA_AUTO_CLOSE false
 RUN adduser --disabled-password \
     --gecos "Default user" \
-    --uid ${NB_UID} \
     ${NB_USER}
 WORKDIR ${HOME}
 USER root
